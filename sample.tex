@@ -25,9 +25,12 @@
 \setbeamertemplate{navigation symbols}{-}
 
 % support algorithm and pseudocode
-\usepackage{algorithm, algorithmic}
-\renewcommand{\algorithmicrequire}{\textbf{Input:}}
-\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\usepackage[ruled,vlined]{algorithm2e} 
+%\usepackage{caption}
+%\usepackage{algorithm, algorithmic}
+%\floatname{algorithm}{Algorithm}
+%\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+%\renewcommand{\algorithmicensure}{\textbf{Output:}}
 
 % set the color of every meth formular to blue
 \everymath{\color{blue}}
@@ -327,6 +330,12 @@ Finally, we compute the length of CLCS:
 
 \end{frame}
 
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Algorithm by Yin-Te Tsai}
+  
+\end{frame}
+
 \subsection{Algorithm by Francis Chin et al.}
 %----------- slide --------------------------------------------------%
 \begin{frame}
@@ -354,6 +363,34 @@ Finally, we compute the length of CLCS:
   \vskip10pt
   \pause
   The length of CLCS of $X$, $Y$ with respect to $P$ is given by $L(n,m,r)$. 
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Algorithm by Francis Chin et al.}
+Let $m^{\prime} = n-a+1$ and $n^{\prime} = m-b+1$, the pseudocode for the algorithm is as follows (Algorithm \ref{algo:lcs}).
+It can be easily seen that the time complexity is $O(m^{\prime}n^{\prime})$. 
+
+\begin{algorithm}[H]
+  \SetLine
+  initialize $L_{a,b}[i, 0] \gets 0$ for $1\le i\le m^{\prime}$
+  initialize $L_{a,b}[0, j] \gets 0$ for  $1\le j\le n^{\prime}$ 
+
+  \For {$i =1 \to \ m^{\prime}$} {
+    \For {$j = 1 \to \ n^{\prime}$} {
+      \eIf {$x[i]=y[j]$}{
+        {$L_{a,b}[i, j] \gets L_{a,b}[i-1, j-1] + 1$}
+      }{
+        {$L_{a,b}[i, j] \gets \max\{L_{a,b}[i-1, j], L_{a,b}[i, j-1]\}$}
+      }
+    }
+  }
+  \Return{$L_{a,b}$}
+
+  \caption{LCS-LENGTH$(x, y, m^{\prime}, n^{\prime})$}
+  \label{algo:lcs}
+\end{algorithm}
 
 \end{frame}
 
@@ -405,6 +442,14 @@ Finally, we compute the length of CLCS:
   \pause\pause\pause\pause\pause\pause
   Finally, $|Z|=L(3,3,1)=2$.
 
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Algorithm by Francis Chin}
+%  \begin{lstlisting}[caption={class CLCSSolver},label=Head\_CLCSSolver, language=c++]
+%  \end{lstlisting}  
+\lstinputlisting[language=C++,caption={class CLCSSolver}]{src/CLCSSolver.h}
 \end{frame}
 
 \section{Experimental Study}
