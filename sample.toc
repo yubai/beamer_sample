@@ -1,9 +1,0 @@
-\beamer@endinputifotherversion {3.10pt}
-\beamer@sectionintoc {2}{Brief Introduction to the Problem}{3}{0}{1}
-\beamer@sectionintoc {3}{Algorithms Description}{5}{0}{2}
-\beamer@subsectionintoc {3}{1}{Algorithm by Yin-Te Tsai}{8}{0}{2}
-\beamer@subsectionintoc {3}{2}{Algorithm by Francis Chin et al.}{34}{0}{2}
-\beamer@sectionintoc {4}{Experimental Study}{54}{0}{3}
-\beamer@subsectionintoc {4}{1}{Correctness}{56}{0}{3}
-\beamer@subsectionintoc {4}{2}{Performance}{57}{0}{3}
-\beamer@sectionintoc {5}{Fitting Data with Polynomials}{58}{0}{4}
